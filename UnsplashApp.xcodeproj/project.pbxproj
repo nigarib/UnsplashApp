@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05467BB52A140F5500BC86A9 /* RegisterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05467BB42A140F5500BC86A9 /* RegisterStruct.swift */; };
+		05467BB72A14102E00BC86A9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05467BB62A14102E00BC86A9 /* RegisterViewModel.swift */; };
+		057E611C2A167D28008740F2 /* TopicsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E611A2A167D28008740F2 /* TopicsViewCell.swift */; };
+		057E611D2A167D28008740F2 /* TopicsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057E611B2A167D28008740F2 /* TopicsViewCell.xib */; };
+		057E611F2A1BE331008740F2 /* UnsplashInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E611E2A1BE331008740F2 /* UnsplashInfoViewController.swift */; };
+		057E61212A1D0EE9008740F2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E61202A1D0EE9008740F2 /* HeaderCollectionReusableView.swift */; };
 		05A0F49A2A0F820100AEE01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4992A0F820100AEE01F /* AppDelegate.swift */; };
 		05A0F49C2A0F820100AEE01F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F49B2A0F820100AEE01F /* SceneDelegate.swift */; };
 		05A0F4A12A0F820100AEE01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A0F49F2A0F820100AEE01F /* Main.storyboard */; };
@@ -25,13 +31,18 @@
 		05A0F4C82A128A2C00AEE01F /* PhotosViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4C62A128A2C00AEE01F /* PhotosViewCell.swift */; };
 		05A0F4C92A128A2C00AEE01F /* PhotosViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A0F4C72A128A2C00AEE01F /* PhotosViewCell.xib */; };
 		05A0F4CB2A128D6D00AEE01F /* UIImageView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4CA2A128D6D00AEE01F /* UIImageView+ext.swift */; };
-		05A0F4CD2A137DA700AEE01F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4CC2A137DA700AEE01F /* CategoryViewModel.swift */; };
 		05A0F4CF2A1381F700AEE01F /* TopicsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4CE2A1381F700AEE01F /* TopicsStruct.swift */; };
 		05A0F4D42A13854A00AEE01F /* UserPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0F4D32A13854A00AEE01F /* UserPhotosViewController.swift */; };
 		DE39D2518160E47B72BEB95E /* Pods_UnsplashApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96278CD26B9EC0FCEC23569 /* Pods_UnsplashApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05467BB42A140F5500BC86A9 /* RegisterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStruct.swift; sourceTree = "<group>"; };
+		05467BB62A14102E00BC86A9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		057E611A2A167D28008740F2 /* TopicsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewCell.swift; sourceTree = "<group>"; };
+		057E611B2A167D28008740F2 /* TopicsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsViewCell.xib; sourceTree = "<group>"; };
+		057E611E2A1BE331008740F2 /* UnsplashInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashInfoViewController.swift; sourceTree = "<group>"; };
+		057E61202A1D0EE9008740F2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		05A0F4962A0F820100AEE01F /* UnsplashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A0F4992A0F820100AEE01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05A0F49B2A0F820100AEE01F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +63,6 @@
 		05A0F4C62A128A2C00AEE01F /* PhotosViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewCell.swift; sourceTree = "<group>"; };
 		05A0F4C72A128A2C00AEE01F /* PhotosViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosViewCell.xib; sourceTree = "<group>"; };
 		05A0F4CA2A128D6D00AEE01F /* UIImageView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ext.swift"; sourceTree = "<group>"; };
-		05A0F4CC2A137DA700AEE01F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		05A0F4CE2A1381F700AEE01F /* TopicsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsStruct.swift; sourceTree = "<group>"; };
 		05A0F4D32A13854A00AEE01F /* UserPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotosViewController.swift; sourceTree = "<group>"; };
 		4EE4FF3B16A3475A465ACC8D /* Pods-UnsplashApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057E61222A1D0EF2008740F2 /* ReusableCollection */ = {
+			isa = PBXGroup;
+			children = (
+				057E61202A1D0EE9008740F2 /* HeaderCollectionReusableView.swift */,
+			);
+			path = ReusableCollection;
+			sourceTree = "<group>";
+		};
 		05A0F48D2A0F820100AEE01F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +134,7 @@
 				05A0F4B02A0F85DF00AEE01F /* SearchViewController.swift */,
 				05A0F4BD2A1169C300AEE01F /* LoginViewController.swift */,
 				05A0F4BF2A1230BC00AEE01F /* RegisterViewController.swift */,
+				057E611E2A1BE331008740F2 /* UnsplashInfoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				05A0F4B82A11410A00AEE01F /* PhotosViewModel.swift */,
-				05A0F4CC2A137DA700AEE01F /* CategoryViewModel.swift */,
+				05467BB62A14102E00BC86A9 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +163,7 @@
 			children = (
 				05A0F4BB2A11422B00AEE01F /* PhotosStruct.swift */,
 				05A0F4CE2A1381F700AEE01F /* TopicsStruct.swift */,
+				05467BB42A140F5500BC86A9 /* RegisterStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +180,7 @@
 		05A0F4D02A1384B200AEE01F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				057E61222A1D0EF2008740F2 /* ReusableCollection */,
 				05A0F4D22A1384F600AEE01F /* XIB */,
 				05A0F4D12A1384BF00AEE01F /* Extension */,
 			);
@@ -179,6 +200,8 @@
 			children = (
 				05A0F4C62A128A2C00AEE01F /* PhotosViewCell.swift */,
 				05A0F4C72A128A2C00AEE01F /* PhotosViewCell.xib */,
+				057E611A2A167D28008740F2 /* TopicsViewCell.swift */,
+				057E611B2A167D28008740F2 /* TopicsViewCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -262,6 +285,7 @@
 			files = (
 				05A0F4A62A0F820400AEE01F /* LaunchScreen.storyboard in Resources */,
 				05A0F4A32A0F820400AEE01F /* Assets.xcassets in Resources */,
+				057E611D2A167D28008740F2 /* TopicsViewCell.xib in Resources */,
 				05A0F4A12A0F820100AEE01F /* Main.storyboard in Resources */,
 				05A0F4C92A128A2C00AEE01F /* PhotosViewCell.xib in Resources */,
 			);
@@ -317,16 +341,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A0F4BE2A1169C300AEE01F /* LoginViewController.swift in Sources */,
+				057E611C2A167D28008740F2 /* TopicsViewCell.swift in Sources */,
 				05A0F4C02A1230BC00AEE01F /* RegisterViewController.swift in Sources */,
 				05A0F4D42A13854A00AEE01F /* UserPhotosViewController.swift in Sources */,
 				05A0F4B92A11410A00AEE01F /* PhotosViewModel.swift in Sources */,
 				05A0F4AF2A0F856D00AEE01F /* MainViewController.swift in Sources */,
 				05A0F4CF2A1381F700AEE01F /* TopicsStruct.swift in Sources */,
+				057E61212A1D0EE9008740F2 /* HeaderCollectionReusableView.swift in Sources */,
 				05A0F49A2A0F820100AEE01F /* AppDelegate.swift in Sources */,
 				05A0F4C32A1281DC00AEE01F /* PhotosManager.swift in Sources */,
+				05467BB72A14102E00BC86A9 /* RegisterViewModel.swift in Sources */,
 				05A0F4B42A112FE300AEE01F /* NetworkManager.swift in Sources */,
-				05A0F4CD2A137DA700AEE01F /* CategoryViewModel.swift in Sources */,
 				05A0F4B12A0F85E000AEE01F /* SearchViewController.swift in Sources */,
+				057E611F2A1BE331008740F2 /* UnsplashInfoViewController.swift in Sources */,
+				05467BB52A140F5500BC86A9 /* RegisterStruct.swift in Sources */,
 				05A0F4C52A12826B00AEE01F /* PhotosManagerHelper.swift in Sources */,
 				05A0F4CB2A128D6D00AEE01F /* UIImageView+ext.swift in Sources */,
 				05A0F4BC2A11422B00AEE01F /* PhotosStruct.swift in Sources */,

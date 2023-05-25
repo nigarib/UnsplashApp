@@ -13,23 +13,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collection2: UICollectionView!
     
     var photosViewModel = PhotosViewModel()
-    let cell = "\(PhotosViewCell.self)"
+    let cell1 = "\(TopicsViewCell.self)"
+    let cell2 = "\(PhotosViewCell.self)"
     override func viewDidLoad() {
         super.viewDidLoad()
-        collection2.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+        collection2.register(UINib(nibName: cell2, bundle: nil), forCellWithReuseIdentifier: cell2)
+        collection1.register(UINib(nibName: cell1, bundle: nil), forCellWithReuseIdentifier: cell1)
         configure()
     }
     
     func configure() {
         photosViewModel.getPhotos()
+        photosViewModel.getTopics()
         photosViewModel.successCallBack = {
+            self.collection1.reloadData()
             self.collection2.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collection1 {
-            return 10
+            return photosViewModel.topics.count
         } else {
             return photosViewModel.photos.count
         }
@@ -37,11 +41,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collection1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath)
-            cell.backgroundColor = .blue
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell1, for: indexPath) as! TopicsViewCell
+            cell.configure(data: photosViewModel.topics[indexPath.item])
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! PhotosViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell2, for: indexPath) as! PhotosViewCell
             cell.configure(data: photosViewModel.photos[indexPath.item])
             return cell
         }
@@ -57,12 +61,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collection1 {
-            print("hi")
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
+            navigationController?.show(vc, sender: nil)
         } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
             navigationController?.show(vc, sender: nil)
             
         }
     }
+    
+    
 
+    @IBAction func infoButton(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "UnsplashInfoViewController") as! UnsplashInfoViewController
+        navigationController?.show(vc, sender: nil)
+    }
 }

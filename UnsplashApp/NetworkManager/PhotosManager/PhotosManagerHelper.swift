@@ -9,6 +9,7 @@ import Foundation
 
 enum PhotosEndPoint: String {
     case photos = "photos/"
+    case topics = "topics/"
     
     var path: String {
         NetworkHelper.shared.urlConfig(path: self.rawValue)

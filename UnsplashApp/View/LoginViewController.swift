@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        navigationController?.show(vc, sender: nil)
+
     }
     
 }
