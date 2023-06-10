@@ -17,4 +17,9 @@ class NetworkHelper {
         baseUrl + path + "?client_id=\(apiKey)"
     }
     
+    func urlConfig2(path1: String, id: String, path2: String) -> String {
+        baseUrl + path1 + "\(id)" + path2 + "?client_id=\(apiKey)"
+    }
+    
+//    topics/Mr49Evh5Sks/photos
 }

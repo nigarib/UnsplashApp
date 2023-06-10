@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var photosViewModel = PhotosViewModel()
     let cell1 = "\(TopicsViewCell.self)"
     let cell2 = "\(PhotosViewCell.self)"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collection2.register(UINib(nibName: cell2, bundle: nil), forCellWithReuseIdentifier: cell2)
@@ -65,12 +66,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             navigationController?.show(vc, sender: nil)
         } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
+            vc.viewModel = UserPhotosViewModel(photos: photosViewModel.photos, index: indexPath.item)
             navigationController?.show(vc, sender: nil)
             
         }
     }
-    
-    
 
     @IBAction func infoButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "UnsplashInfoViewController") as! UnsplashInfoViewController

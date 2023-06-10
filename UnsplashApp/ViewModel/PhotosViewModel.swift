@@ -10,8 +10,11 @@ import Foundation
 class PhotosViewModel {
     var photos = [Photos]()
     var topics = [Topic]()
+    
     var successCallBack: (()->())?
     var errorCallBack: ((String)->())?
+    
+    
     
     func getPhotos() {
         PhotosManager.shared.getPhotos { data, error in
@@ -36,6 +39,4 @@ class PhotosViewModel {
             }
         }
     }
-    
 }
-

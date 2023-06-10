@@ -21,6 +21,7 @@ class TopicsViewCell: UICollectionViewCell {
     func configure(data: Topic, hideImageView: Bool = true) {
         if hideImageView {
             topicImage.isHidden = true
+            topicLabel.textColor = .black
         } else {
             topicImage.isHidden = false
             guard let url = data.previewPhotos?.first?.urls?.regular else { return }

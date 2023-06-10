@@ -9,12 +9,18 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet private weak var collection: UICollectionView!
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var topicLabel: UILabel!
     
     let cell = "\(TopicsViewCell.self)"
+    
     var topics = [Topic]()
+    var callBack: ((Int,String)->())?
     
     override func layoutSubviews() {
         collection.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+        topicLabel.text = "Browse by Category"
+        cellLabel.text = "Discover"
     }
     
     func configure(data: [Topic]) {
@@ -37,6 +43,7 @@ class HeaderCollectionReusableView: UICollectionReusableView, UICollectionViewDe
     }
     
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        callBack?(indexPath.item,topics[indexPath.item].title!)
+    }
 }
