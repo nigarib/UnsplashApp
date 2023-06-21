@@ -7,7 +7,8 @@ import Foundation
 
 // MARK: - Photos
 struct Photos: Codable {
-//    let id, slug: String?
+    let id: String?
+//    let slug: String?
 //    let createdAt, updatedAt, promotedAt: Date?
 //    let width, height: Int?
 //    let color, blurHash, description, altDescription: String?
@@ -19,9 +20,11 @@ struct Photos: Codable {
 //    let sponsorship: Sponsorship?
 //    let topicSubmissions: TopicSubmissions?
     let user: User?
+    var isFavorite: Bool?
 
     enum CodingKeys: String, CodingKey {
-//        case id, slug
+        case id
+//        case slug
 //        case createdAt = "created_at"
 //        case updatedAt = "updated_at"
 //        case promotedAt = "promoted_at"
@@ -36,6 +39,7 @@ struct Photos: Codable {
 //        case sponsorship
 //        case topicSubmissions = "topic_submissions"
         case user
+        case isFavorite
     }
 }
 

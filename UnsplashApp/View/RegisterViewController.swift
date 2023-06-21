@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     @IBOutlet weak var firstname: UITextField!
     @IBOutlet weak var lastname: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerViewModel.readJsonFile()
+        registerViewModel.getItems()
     }
     
     @IBAction func signUpButton(_ sender: Any) {
@@ -28,12 +28,13 @@ class RegisterViewController: UIViewController {
            let username = username.text, !username.isEmpty,
            let email = email.text, !email.isEmpty,
            let password = password.text, !password.isEmpty {
-            registerViewModel.users.append(RegisterUser(firstname: firstname, lastname: lastname, username: username, email: email, password: password))
             
-            registerViewModel.backCallBack = {
-                self.navigationController?.popViewController(animated: true)
+            registerViewModel.saveUser(data: RegisterUser(firstname: firstname, lastname: lastname, username: username, email: email, password: password, profileImage: nil))            
+            self.navigationController?.popViewController(animated: true)
+            if let loginController = self.navigationController?.viewControllers.first as? LoginViewController {
+                loginController.emailLogin.text = email
+                loginController.passwordLogin.text = password
             }
-            registerViewModel.writeJsonFile()
         }
     }
     

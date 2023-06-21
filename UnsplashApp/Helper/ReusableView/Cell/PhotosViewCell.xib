@@ -26,7 +26,19 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                         <connections>
-                            <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RGG-93-aPH"/>
+                            <action selector="userButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ghs-sN-gxm"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE6-I5-FAB">
+                        <rect key="frame" x="169" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="0Cj-tS-kUH"/>
+                            <constraint firstAttribute="width" constant="40" id="0ej-9h-u9E"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="imageButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="V3k-kN-Ld5"/>
                         </connections>
                     </button>
                 </subviews>
@@ -37,15 +49,21 @@
                 <constraint firstAttribute="bottom" secondItem="5UK-eq-Q2u" secondAttribute="bottom" id="TNi-18-LWh"/>
                 <constraint firstItem="3eJ-9j-Izj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aPQ-aJ-rPT"/>
                 <constraint firstAttribute="trailing" secondItem="3eJ-9j-Izj" secondAttribute="trailing" id="cal-LD-neW"/>
+                <constraint firstItem="LE6-I5-FAB" firstAttribute="top" secondItem="3eJ-9j-Izj" secondAttribute="top" id="fK2-Hj-RNe"/>
                 <constraint firstItem="3eJ-9j-Izj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lsV-zd-nFv"/>
                 <constraint firstAttribute="bottom" secondItem="3eJ-9j-Izj" secondAttribute="bottom" id="qTO-ch-oHP"/>
+                <constraint firstItem="LE6-I5-FAB" firstAttribute="trailing" secondItem="3eJ-9j-Izj" secondAttribute="trailing" id="xuf-bY-p3i"/>
             </constraints>
             <size key="customSize" width="209" height="235"/>
             <connections>
                 <outlet property="buttonOutlet" destination="5UK-eq-Q2u" id="Gop-xM-s0Z"/>
+                <outlet property="imageButtonOutlet" destination="LE6-I5-FAB" id="RP9-Ku-ar7"/>
                 <outlet property="photoImage" destination="3eJ-9j-Izj" id="824-iy-LoH"/>
             </connections>
             <point key="canvasLocation" x="83.206106870229007" y="84.859154929577471"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+    </resources>
 </document>

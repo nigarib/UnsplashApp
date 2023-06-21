@@ -30,6 +30,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.collection1.reloadData()
             self.collection2.reloadData()
         }
+        photosViewModel.errorCallBack = { error in
+            print(error)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,6 +51,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell2, for: indexPath) as! PhotosViewCell
             cell.configure(data: photosViewModel.photos[indexPath.item])
+            cell.tag = indexPath.item
+            cell.favoriteTapped = { index in
+                self.photosViewModel.saveItem(index: index)
+            }
             return cell
         }
     }
@@ -62,8 +69,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collection1 {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
-            navigationController?.show(vc, sender: nil)
+            let controller = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TopicPhotosViewController") as! TopicPhotosViewController
+            controller.topicPhotosViewModel.id = self.photosViewModel.topics[indexPath.item].id ?? ""
+            controller.myTitle = title ?? ""
+            self.navigationController?.show(controller, sender: nil)
         } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
             vc.viewModel = UserPhotosViewModel(photos: photosViewModel.photos, index: indexPath.item)

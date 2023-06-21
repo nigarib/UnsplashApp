@@ -55,7 +55,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
         header.configure(data: searchViewModel.topics)
-        
         header.callBack = { index , title in
             let controller = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TopicPhotosViewController") as! TopicPhotosViewController
             controller.topicPhotosViewModel.id = self.searchViewModel.topics[index].id ?? ""
@@ -72,5 +71,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width / 2 - 10, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserPhotosViewController") as! UserPhotosViewController
+        vc.viewModel = UserPhotosViewModel(photos: searchViewModel.searchResult, index: indexPath.item)
+        navigationController?.show(vc, sender: nil)
     }
 }

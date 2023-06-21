@@ -12,34 +12,23 @@ class RegisterViewModel {
     var users = [RegisterUser]()
     var backCallBack: (()->())?
     
-    func getFilePath() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let docDirectory = paths[0]
-        let path = docDirectory.appendingPathComponent("RegisterUsers.json")
-        print(path)
-        return path
+    private var adapter = UserRegisterAdapter()
+    
+    func getItems() {
+        adapter.readJsonFile()
+        users = adapter.users
     }
     
-    func writeJsonFile() {
-        do {
-            let data = try JSONEncoder().encode(users)
-            try data.write(to: getFilePath())
-            self.backCallBack?()
-        } catch {
-            print(error.localizedDescription)
-        }
+    func saveUser(data: RegisterUser) {
+        adapter.users.append(data)
+        adapter.writeJsonFile()
     }
     
-    func readJsonFile() {
-        if let data = try? Data(contentsOf: getFilePath()) {
-            do {
-                users = try JSONDecoder().decode([RegisterUser].self, from: data)
-            } catch {
-                print(error.localizedDescription)
-
-            }
-        } else {
-            print("File not exist ")
-        }
+    func validateLogin(email: String, password: String) -> Bool {
+        users.contains { $0.email == email && $0.password == password }
+    }
+    
+    func getProfile(email: String) -> RegisterUser? {
+        users.first { $0.email == email }
     }
 }

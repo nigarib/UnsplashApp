@@ -12,10 +12,11 @@ class HeaderCollectionReusableView: UICollectionReusableView, UICollectionViewDe
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
     
-    let cell = "\(TopicsViewCell.self)"
     
+    let cell = "\(TopicsViewCell.self)"
     var topics = [Topic]()
     var callBack: ((Int,String)->())?
+    
     
     override func layoutSubviews() {
         collection.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
